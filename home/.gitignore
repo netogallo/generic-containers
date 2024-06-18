@@ -2,3 +2,6 @@
 .local
 .gitconfig
 .config/nvim/lazy-lock.json 
+.config/cabal/
+.config/github-copilot/
+

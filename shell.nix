@@ -7,5 +7,6 @@
 	neovim-qt
 	xsel
 	neovim
+	nodejs_22
     ];
 }
