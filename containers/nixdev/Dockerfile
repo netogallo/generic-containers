@@ -25,14 +25,9 @@ ENV SRC /workspace
 RUN mkdir $SRC && chown ${MAIN_USER_NAME}:${MAIN_USER_NAME} $SRC
 VOLUME $SRC
 
-VOLUME $MAIN_USER_HOME/.ssh
+VOLUME $MAIN_USER_HOME
 
 COPY nix.conf /etc/nix/nix.conf
-
-COPY env.sh /tmp/env.sh
-RUN cat /tmp/env.sh | envsubst > ${MAIN_USER_HOME}.env.sh
-RUN chown ${MAIN_USER_NAME}:${MAIN_USER_NAME} ${MAIN_USER_HOME}.env.sh
-RUN echo "source ~/.env.sh" >> ${MAIN_USER_HOME}.bashrc
 
 USER ${MAIN_USER_NAME}
 WORKDIR /home/${MAIN_USER_NAME}

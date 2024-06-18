@@ -10,5 +10,5 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./:/workspace/
-      - ./secrets/ssh/:/home/main/.ssh/
+      - ./home/:/home/main/
     network_mode: host

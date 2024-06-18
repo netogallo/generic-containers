@@ -1,0 +1,3 @@
+[submodule "projects/histon"]
+	path = projects/histon
+	url = git@github.com:netogallo/histon.git
