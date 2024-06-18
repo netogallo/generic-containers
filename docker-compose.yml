@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  sdk:
+    build:
+        context: containers/nixdev
+        dockerfile: Dockerfile
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./:/workspace/
+      - ./secrets/ssh/:/home/main/.ssh/
+    network_mode: host

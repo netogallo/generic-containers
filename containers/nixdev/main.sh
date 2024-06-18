@@ -7,8 +7,9 @@ _term() {
 
 trap _term SIGTERM
 
-
 ## Run the main loop
-sleep infinity &
+sudo $NIX_DAEMON &
+#sleep infinity &
 MAIN_LOOP_PID=$!
 wait $MAIN_LOOP_PID
+
