@@ -1,3 +1,4 @@
 .cache
 .local
 .gitconfig
+.config/nvim/lazy-lock.json 
