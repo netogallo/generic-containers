@@ -11,4 +11,5 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./:/workspace/
       - ./home/:/home/main/
+      - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:/run/user/1000/wayland-0
     network_mode: host

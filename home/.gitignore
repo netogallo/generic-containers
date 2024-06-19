@@ -4,4 +4,5 @@
 .config/nvim/lazy-lock.json 
 .config/cabal/
 .config/github-copilot/
+.config/window-geometry.conf
 
