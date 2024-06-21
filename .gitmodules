@@ -1,3 +1,6 @@
 [submodule "projects/histon"]
 	path = projects/histon
 	url = git@github.com:netogallo/histon.git
+[submodule "projects/nixpkgs-ghc-cross"]
+	path = projects/nixpkgs-ghc-cross
+	url = git@github.com:netogallo/nixpkgs-ghc-cross.git
