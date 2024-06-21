@@ -1,4 +1,4 @@
-FROM archlinux:base-20231112.0.191179
+FROM archlinux:base-20240101.0.204074
 
 ARG MAIN_USER_NAME=main
 ARG MAIN_USER_UID=1000
@@ -9,6 +9,8 @@ ENV MAIN_USER_HOME /home/$MAIN_USER_NAME/
 ENV NIX_BIN /nix/var/nix/profiles/default/bin/
 ENV NIX_SHELL $NIX_BIN/nix-shell 
 ENV NIX_DAEMON $NIX_BIN/nix-daemon
+ENV NIX_CHANNEL $NIX_BIN/nix-channel
+ENV NIX_ENV $NIX_BIN/nix-env
 
 RUN pacman -Sy sudo git gettext --noconfirm
 RUN curl -L https://nixos.org/nix/install > /tmp/nix.sh
@@ -29,7 +31,11 @@ VOLUME $MAIN_USER_HOME
 
 COPY nix.conf /etc/nix/nix.conf
 
+RUN $NIX_CHANNEL --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl && $NIX_CHANNEL --update
+RUN $NIX_ENV -iA nixgl.auto.nixGLDefault   # or replace `nixGLDefault` with your desired wrapper
+
 USER ${MAIN_USER_NAME}
 WORKDIR /home/${MAIN_USER_NAME}
+
 
 CMD ["bash", "/var/docker/bin/main.sh"]

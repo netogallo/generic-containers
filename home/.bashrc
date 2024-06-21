@@ -14,3 +14,4 @@ export USER=main
 export NIX_REMOTE=daemon
 export XDG_RUNTIME_DIR=/run/user/1000
 export WAYLAND_DISPLAY=wayland-0
+export QT_QPA_PLATFORM=wayland

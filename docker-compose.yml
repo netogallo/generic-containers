@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   sdk:
@@ -13,3 +13,9 @@ services:
       - ./home/:/home/main/
       - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:/run/user/1000/wayland-0
     network_mode: host
+    devices:
+      - /dev/dri
+    group_add:
+      - video
+    security_opt:
+      - label:seccomp:unconfined

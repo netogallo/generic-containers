@@ -8,5 +8,10 @@
 	xsel
 	neovim
 	nodejs_22
+	curl
+    	element-desktop
+	wl-clipboard
+	ripgrep
+	less
     ];
 }

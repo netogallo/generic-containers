@@ -21,5 +21,12 @@ require("lazy").setup({
 	  version = '^3', -- Recommended
 	  lazy = false, -- This plugin is already lazy
 	},
-	"github/copilot.vim"
+	"github/copilot.vim",
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope.nvim",
+	"equalsraf/neovim-gui-shim",
 })
+
+vim.cmd([[
+  :set shiftwidth=2
+]])
